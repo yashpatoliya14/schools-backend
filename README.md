@@ -1,6 +1,4 @@
-Sure! Here's a README.md template for your Express + MySQL schools API project:
 
-````markdown
 # Schools API with Express and MySQL
 
 This project is a simple RESTful API built with Express.js and MySQL to manage a list of schools. It supports adding schools and retrieving them sorted by proximity to a given location (latitude and longitude).
