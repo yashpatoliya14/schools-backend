@@ -23,7 +23,7 @@ const handleListSchools =  (req, res) => {
     return res.status(400).json({ error: 'Invalid latitude or longitude' });
   }
 
-  db.query('SELECT * FROM schools', (err, schools) => {
+  db.query('SELECT * FROM Schools', (err, schools) => {
     if (err) return res.status(500).json({ error: err });
 
     // Add distance to each school
@@ -41,7 +41,7 @@ const handleListSchools =  (req, res) => {
 
 const handleAddSchool =  (req, res) => {
   const { name, address, latitude, longitude } = req.body;
-  const sql = 'INSERT INTO schools (name, address, latitude, longitude) VALUES (?, ?, ?, ?)';
+  const sql = 'INSERT INTO Schools (name, address, latitude, longitude) VALUES (?, ?, ?, ?)';
   db.query(sql, [name, address, latitude, longitude], (err, result) => {
     if (err) return res.status(500).json({ error: err });
     res.status(201).json({ message: 'School added', schoolId: result.insertId });
